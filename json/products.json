@@ -1,0 +1,35 @@
+{
+    "products": [
+        {
+            "name" : "nike1",
+            "price" : 160,
+            "quantite" : 0,
+            "image" : "./image/nike1.png",
+            "vote" :0
+        },
+        {
+            "name" : "nike2",
+            "price" : 220,
+            "quantite" : 0,
+            "image" : "./image/nike2.png",
+            "vote" :0
+    
+        },
+        {
+            "name" : "nike3",
+            "price" : 310,
+            "quantite" : 0,
+            "image" : "./image/nike3.png",
+            "vote" :0
+    
+        },
+        {
+            "name" : "nike4",
+            "price" : 250,
+            "quantite" : 0,
+            "image" : "./image/nike4.png",
+            "vote" :0
+    
+        }
+    ]
+}
