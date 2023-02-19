@@ -1,26 +1,8 @@
 {
   "menu": {
-    "Home": "./index.html",
-    "Product": "./products.html",
+    "Home": "../index.html",
+    "Product": "../html/products.html",
     "Collection": "",
     "Contact": ""
-  },
-
-  "icon": {
-    "svg": [
-      {
-        "class": "p-1 text-white hover:text-yellow-500 cursor-pointer duration-200 fa-solid fa-magnifying-glass fa-xl",
-        "xmlns": "http://www.w3.org/2000/svg",
-        "data-icon": "search",
-        "viewBox": "0 0 512 512"
-      },
-      {
-        "class": "p-1 text-white hover:text-yellow-500 duration-200 fa-solid fa-cart-shopping fa-xl cursor-pointer",
-        "xmlns": "http://www.w3.org/2000/svg",
-        "data-icon": "shopping-cart",
-        "viewBox": "0 0 576 512"
-      }
-    ] 
   }
- 
 }

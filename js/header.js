@@ -2,17 +2,14 @@ fetch("../json/menu.json")
   .then((response) => response.json())
   .then((response) => menu(response.menu,response.icon));
 
-const menu = (menu,icon) => {
-  document.body.setAttribute("class","bg-black")
-  
-    let header = document.querySelector("header");
+  let header = document.querySelector("header");
   let nav = document.querySelector("nav");
   let navDiv=document.createElement("div")
   nav.appendChild(navDiv)
   nav.setAttribute("class","w-10/12 m-auto flex items-center justify-between px-8 py-02")
   header.setAttribute(
     "class",
-    "header sticky top-0 bg-transparent backdrop-blur-md shadow-md z-10"
+    "header sticky top-0 bg-black backdrop-blur-md shadow-md z-10"
   );
   navDiv.setAttribute("class", "nav font-montserrat text-white font-semibold text-lg te");
   //create element
@@ -32,7 +29,6 @@ const menu = (menu,icon) => {
 
   //icon
   let iconDiv = document.createElement("div");
-  let iconA = document.createElement("a");
   
 
   //appendchild logo
@@ -43,7 +39,7 @@ const menu = (menu,icon) => {
 
   //appendChild menu
   navDiv.appendChild(menUl);
-
+const menu = (menu,icon) => {
   Object.keys(menu).map((elt) => {
     let menuLi = document.createElement("li");
     let menuA = document.createElement("a");
@@ -57,19 +53,32 @@ const menu = (menu,icon) => {
     );
   });
 
+};
 //   appendchild icon
 nav.appendChild(iconDiv)
-iconDiv.setAttribute("class","w-3/12 flex justify-end gap-4")
-Object.keys(icon.svg).map(elt=>{
-    let iconSvg = document.createElement("svg");
-    iconDiv.appendChild(iconSvg)
-    Object
-    multipleAttributes(iconSvg,icon.svg[elt])
-})
-};
+iconDiv.setAttribute("class","w-3/12 flex justify-end items-center gap-4")
 
-const multipleAttributes = (elem, elemAttributes)=>{
-    Object.keys(elemAttributes).forEach(attribute => {
-    elem.setAttribute(attribute, elemAttributes[attribute]);
-    });
-}
+let iconSvg1 = document.createElement("svg");
+let iconSvg2 = document.createElement("svg");
+iconDiv.append(iconSvg1,iconSvg2)
+iconSvg1.setAttribute("class","search p-1 text-white hover:text-yellow-500 cursor-pointer duration-200 fa-solid fa-magnifying-glass fa-xl")
+iconSvg2.setAttribute("class"," shopping-cart relative p-1 text-white hover:text-yellow-500 duration-200 fa-solid fa-cart-shopping fa-xl cursor-pointer")
+
+
+let shoppingSvg=document.querySelector('.shopping-cart')
+const notif=document.createElement('span')
+shoppingSvg.appendChild(notif)
+notif.setAttribute("class","absolute -top-4 right-1 rounded px-1 py-1.5 bg-red-800 text-white text-[10px] ")
+notif.innerHTML=0
+notif.style.visibility="hidden"
+
+let profil=document.createElement('img')
+let profilA=document.createElement('a')
+profil.setAttribute("src","../image/profile.png")
+profil.setAttribute("class","w-[50px]")
+iconDiv.appendChild(profilA)
+profilA.appendChild(profil)
+profilA.setAttribute("href","../html/admin.html")
+
+
+export { notif };
